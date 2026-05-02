@@ -19,14 +19,14 @@ Two agents stand watch over Web3 — one before deployment, one after.
 </div>
 
 ```
-████████████████████████████████████████████████████████████████
-█  ┌─[ AEGIS402 ]─────────────────────────────────────[ ONLINE ]┐
-█  │ > AGENT_01 :: pre-audit    :: source-code analyzer         │
-█  │ > AGENT_02 :: post-audit   :: transaction auditor          │
-█  │ > MODEL    :: gpt-oss-120b                                 │
-█  │ > MODE     :: evidence-based                               │
-█  └────────────────────────────────────────────────────────────┘
-████████████████████████████████████████████████████████████████
+┌─[ AEGIS402 ]───────────────────────────────────────[ ONLINE ]─┐
+│                                                               │
+│  > AGENT_01 :: pre-audit    :: source-code analyzer           │
+│  > AGENT_02 :: post-audit   :: transaction auditor            │
+│  > MODEL    :: gpt-oss-120b                                   │
+│  > MODE     :: evidence-based                                 │
+│                                                               │
+└───────────────────────────────────────────────────────────────┘
 ```
 
 ---
@@ -96,17 +96,17 @@ The LLM is restricted to the only thing it should ever do: **interpret, summariz
 
 ```
   Collect raw RPC ──► Normalize ──► Decode ──► Subject-centric flows
-                                                        │
-                                                        ▼
-                                               Rule signals
-                                                        │
-                                                        ▼
-                                              ┌─────────────┐
-                                              │  LLM AUDIT  │
-                                              └──────┬──────┘
-                                                     │
-                                                     ▼
-                                            JSON schema validate
+                                                         │
+                                                         ▼
+                                                     Rule signals
+                                                         │
+                                                         ▼
+                                                 ┌───────────────┐
+                                                 │   LLM AUDIT   │
+                                                 └───────┬───────┘
+                                                         │
+                                                         ▼
+                                              JSON schema validate
 ```
 
 ### The Pipeline
@@ -169,15 +169,15 @@ POST /audit/from-tx     # use tx.from as the audit subject
 ## `> THE CONSTRUCT`  &nbsp; *AI Stack*
 
 ```
-╔═══════════════╦══════════════════════════════════════════════════════╗
+╔═══════════════╦═══════════════════════════════════════════════════════╗
 ║  Layer        ║  Stack                                                ║
-╠═══════════════╬══════════════════════════════════════════════════════╣
+╠═══════════════╬═══════════════════════════════════════════════════════╣
 ║  Model        ║  gpt-oss-120b  (OpenAI-compatible, local)             ║
 ║  Inference    ║  self-hosted, OpenAI-compatible API                   ║
 ║  Validation   ║  JSON schema · evidence-ref check · post-processing   ║
 ║  Runtime      ║  Hardhat 3 · TypeScript · Node.js                     ║
 ║  Determinism  ║  all decoding/arithmetic/normalization in code        ║
-╚═══════════════╩══════════════════════════════════════════════════════╝
+╚═══════════════╩═══════════════════════════════════════════════════════╝
 ```
 
 ### Why **evidence-based**?
