@@ -1,8 +1,6 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/AEGIS402/.github/main/profile/matrix-rain.svg" alt="matrix rain" width="100%" />
-
-# `> AEGIS402_`
+<img src="https://raw.githubusercontent.com/AEGIS402/.github/main/profile/matrix-rain.svg" alt="AEGIS402 — LLM-Powered Security Audit Agents" width="100%" />
 
 ### LLM-Powered Security Audit Agents for Smart Contracts and On-Chain Transactions
 
@@ -155,7 +153,7 @@ POST /audit/from-tx     # use tx.from as the audit subject
 
 ---
 
-## `> THE CONSTRUCT`  &nbsp; *AI Stack*
+## `> AI STACK`
 
 ```
 ╔═══════════════╦═══════════════════════════════════════════════════════╗
@@ -163,21 +161,9 @@ POST /audit/from-tx     # use tx.from as the audit subject
 ╠═══════════════╬═══════════════════════════════════════════════════════╣
 ║  Model        ║  gpt-oss-120b  (OpenAI-compatible, local)             ║
 ║  Inference    ║  self-hosted, OpenAI-compatible API                   ║
-║  Validation   ║  JSON schema · evidence-ref check · post-processing   ║
-║  Runtime      ║  Hardhat 3 · TypeScript · Node.js                     ║
-║  Determinism  ║  all decoding/arithmetic/normalization in code        ║
+║  Output       ║  JSON, schema-validated per agent                     ║
+║  Method       ║  evidence-based, deterministic preprocessing          ║
 ╚═══════════════╩═══════════════════════════════════════════════════════╝
-```
-
-### Why **evidence-based**?
-
-LLMs hallucinate. The pipeline makes it impossible.
-
-```
-  ▸ Every finding MUST carry evidence_refs
-  ▸ Findings referencing absent evidence are auto-stripped
-  ▸ risk_level is recomputed from risk_score (model's value is overridden)
-  ▸ Output normalized to ASCII English (blocks injection vectors)
 ```
 
 ---
