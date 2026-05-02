@@ -102,16 +102,14 @@ Only the `LLM audit` stage is non-deterministic. Everything before it produces e
 
 ### The Pipeline
 
-| # | Step | Role |
+| # | Stage | What happens |
 |---|---|---|
-| 1 | Preserve Raw Evidence | Keep RPC responses intact, tagged with `evidence_id` |
-| 2 | Normalize Execution | status · gas · block · timestamp into readable form |
-| 3 | Decode Calldata | ERC20 `transfer/approve/transferFrom`, Uniswap V3 `exactInputSingle` |
-| 4 | Decode Event Logs | ERC20 `Transfer` / `Approval` |
-| 5 | Subject-Centric Flows | Asset flows from the audit subject's perspective |
-| 6 | Approval Changes | `Approval` events normalized into approval-change records |
-| 7 | Rule Signals | `extreme_value_imbalance`, `missing_slippage_protection`, ... |
-| 8 | LLM Audit | Evidence-based assessment driven only by the structured payload |
+| 1 | `raw RPC` | Preserve responses from `eth_getTransactionByHash`, `eth_getTransactionReceipt`, `eth_getBlockByNumber`, token metadata, and `eth_getCode` — each tagged with an `evidence_id`. |
+| 2 | `decode` | Normalize execution (`status` · `gas` · `block` · `timestamp`), decode calldata (ERC20 `transfer/approve/transferFrom`, Uniswap V3 `exactInputSingle`), decode event logs (ERC20 `Transfer` / `Approval`). |
+| 3 | `subject flows` | Compute subject-centric asset flows and approval changes from the decoded data. |
+| 4 | `rule signals` | Deterministic signals over the flows: `simple_erc20_transfer`, `extreme_value_imbalance`, `missing_slippage_protection`, ... |
+| 5 | `LLM audit` | Evidence-based assessment driven only by the structured payload. |
+| 6 | `schema check` | JSON parse → schema validation → strip findings whose `evidence_refs` aren't in the payload. |
 
 ### Console
 
