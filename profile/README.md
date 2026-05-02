@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=2500&pause=1500&color=00FF41&center=true&vCenter=true&width=720&lines=AEGIS402+%2F%2F+ONLINE;Initializing+audit+agents...;Scanning+the+chain..." alt="typing" />
+<img src="https://raw.githubusercontent.com/AEGIS402/.github/main/profile/matrix-rain.svg" alt="matrix rain" width="100%" />
 
 # `> AEGIS402_`
 
