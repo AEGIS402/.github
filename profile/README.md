@@ -95,18 +95,20 @@ All hex decoding, decimal handling, and normalization run in **deterministic cod
 The LLM is restricted to the only thing it should ever do: **interpret, summarize, assign risk.**
 
 ```
-  Collect raw RPC ──► Normalize ──► Decode ──► Subject-centric flows
-                                                         │
-                                                         ▼
-                                                     Rule signals
-                                                         │
-                                                         ▼
-                                                 ┌───────────────┐
-                                                 │   LLM AUDIT   │
-                                                 └───────┬───────┘
-                                                         │
-                                                         ▼
-                                              JSON schema validate
+                    [ INPUT PIPELINE ]
+┌────────────────────────────────────────────────────────┐
+│                                                        │
+│  Collect RPC ─► Normalize ─► Decode ─► Subject Flows   │
+│                                                        │
+└───────────────────────────┬────────────────────────────┘
+                            │
+                            ▼
+                    [ LLM ASSESSMENT ]
+┌────────────────────────────────────────────────────────┐
+│                                                        │
+│   Rule Signals ─► LLM Audit ─► JSON Schema Validate    │
+│                                                        │
+└────────────────────────────────────────────────────────┘
 ```
 
 ### The Pipeline
