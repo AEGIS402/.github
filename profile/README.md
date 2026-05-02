@@ -87,7 +87,7 @@ Source-code analyzer. Accepts Solidity, returns a structured **vulnerability rep
 
 Transaction auditor. Takes a single Ethereum transaction hash, **deterministically decodes** standard RPC data, and lets an LLM perform an evidence-based risk assessment.
 
-### Prime Directive — *the agent does not decode hex, the agent does not do math*
+### Determinism Boundary — *the agent does not decode hex, the agent does not do math*
 
 All hex decoding, decimal handling, and normalization run in **deterministic code**.
 The LLM is restricted to the only thing it should ever do: **interpret, summarize, assign risk.**
