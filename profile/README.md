@@ -184,6 +184,11 @@ LLMs hallucinate. The pipeline makes it impossible.
 
 <div align="center">
 
-[`pre-audit`](https://github.com/AEGIS402/pre-audit) &nbsp;·&nbsp; [`post-audit`](https://github.com/AEGIS402/post-audit)
+`> cd AEGIS402 && ls agents/`
+
+[![pre-audit](https://img.shields.io/badge/%E2%97%89%20AGENT__01%20%2F%20pre--audit-00FF41?style=for-the-badge&logoColor=black)](https://github.com/AEGIS402/pre-audit)
+[![post-audit](https://img.shields.io/badge/%E2%97%89%20AGENT__02%20%2F%20post--audit-00B050?style=for-the-badge&logoColor=black)](https://github.com/AEGIS402/post-audit)
+
+`> system: 2 agents ready_`
 
 </div>
