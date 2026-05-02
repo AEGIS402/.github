@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/AEGIS402/.github/main/profile/matrix-rain.svg" alt="matrix rain" width="100%" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=2500&pause=1500&color=00FF41&center=true&vCenter=true&width=720&lines=AEGIS402+%2F%2F+ONLINE;Initializing+audit+agents...;Scanning+the+chain..." alt="typing" />
 
 # `> AEGIS402_`
 
@@ -94,21 +94,10 @@ Transaction auditor. Takes a single Ethereum transaction hash, **deterministical
 All hex decoding, decimal handling, and normalization run in **deterministic code**.
 The LLM is restricted to the only thing it should ever do: **interpret, summarize, assign risk.**
 
+Only the `LLM audit` stage is non-deterministic. Everything before it produces evidence; everything after it validates the model's response.
+
 ```
-                    [ INPUT PIPELINE ]
-┌────────────────────────────────────────────────────────┐
-│                                                        │
-│  Collect RPC ─► Normalize ─► Decode ─► Subject Flows   │
-│                                                        │
-└───────────────────────────┬────────────────────────────┘
-                            │
-                            ▼
-                    [ LLM ASSESSMENT ]
-┌────────────────────────────────────────────────────────┐
-│                                                        │
-│   Rule Signals ─► LLM Audit ─► JSON Schema Validate    │
-│                                                        │
-└────────────────────────────────────────────────────────┘
+  raw RPC  ─►  decode  ─►  subject flows  ─►  rule signals  ─►  LLM audit  ─►  schema check
 ```
 
 ### The Pipeline
@@ -197,13 +186,6 @@ LLMs hallucinate. The pipeline makes it impossible.
 
 <div align="center">
 
-### `> PROJECTS`
-
-[![pre-audit](https://img.shields.io/badge/AGENT_01-pre--audit-00FF41?style=for-the-badge&logo=solidity&logoColor=black)](https://github.com/AEGIS402/pre-audit)
-[![post-audit](https://img.shields.io/badge/AGENT_02-post--audit-00B050?style=for-the-badge&logo=ethereum&logoColor=black)](https://github.com/AEGIS402/post-audit)
-
-<br>
-
-`▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮`
+[`pre-audit`](https://github.com/AEGIS402/pre-audit) &nbsp;·&nbsp; [`post-audit`](https://github.com/AEGIS402/post-audit)
 
 </div>
